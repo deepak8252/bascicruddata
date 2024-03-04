@@ -22,7 +22,12 @@ const Home = () => {
           await axios.delete(`http://localhost:3003/users/${id}`);
           loadUsers()
      }
-    return (
+    if( !users){
+      return <h2>please wait loading data..... </h2>
+    }
+    else{
+      return (
+             
         <div className="container">
              <Table striped bordered hover  responsive className=" shadow-lg">
       <thead>
@@ -57,6 +62,9 @@ const Home = () => {
     </Table>
         </div>
     );
+
+    }
+
 };
 
 export default Home;
