@@ -22,7 +22,7 @@ const Home = () => {
           await axios.delete(`http://localhost:3003/users/${id}`);
           loadUsers()
      }
-    if( !users){
+    if( users.length<0){
       return <h2>please wait loading data..... </h2>
     }
     else{
